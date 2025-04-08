@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cambiar la paleta de colores de verde a morado */
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 270 100% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 240 10% 3.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --accent: 270 100% 60%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 270 100% 60%;
+}
+
+/* Eliminar el tema claro ya que no se necesita */
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 270 100% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 240 10% 3.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --accent: 270 100% 60%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 270 100% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Futuristic grid pattern - cambiado a morado */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(138, 43, 226, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(138, 43, 226, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom scrollbar - cambiado a morado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 43, 226, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 43, 226, 0.6);
+}
+
+/* Text selection - cambiado a morado */
+::selection {
+  background: rgba(138, 43, 226, 0.3);
+  color: white;
+}
+
+/* Efectos de neón adicionales */
+.neon-border {
+  position: relative;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  overflow: hidden;
+}
+
+.neon-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.8), transparent);
+  animation: neon-border-flow 3s linear infinite;
+}
+
+.neon-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.8), transparent);
+  animation: neon-border-flow 3s linear infinite reverse;
+}
+
+@keyframes neon-border-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(138, 43, 226, 0.5), 0 0 10px rgba(138, 43, 226, 0.3), 0 0 15px rgba(138, 43, 226, 0.2);
+}
+
+.neon-box {
+  position: relative;
+}
+
+.neon-box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, rgba(138, 43, 226, 0.5), rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.5));
+  border-radius: inherit;
+  z-index: -1;
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  0% {
+    opacity: 0.5;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(12px);
+  }
+}
+
+/* Añadir estilos para asegurar que el fondo cubra toda la pantalla */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+}
+
+/* Asegurar que los canvas de fondo cubran toda la pantalla */
+canvas {
+  display: block;
+}
+
+/* Mejorar el efecto de líneas de escaneo para que sea más sutil */
+.scan-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(138, 43, 226, 0.02) 0px,
+    rgba(138, 43, 226, 0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Efecto de glitch para textos */
+.glitch-text {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75), 0.025em 0.05em 0
+      rgba(0, 255, 0, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75), 0.025em 0.05em 0
+      rgba(0, 255, 0, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75), -0.05em -0.05em
+      0 rgba(0, 255, 0, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75), -0.05em -0.05em
+      0 rgba(0, 255, 0, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75), 0 -0.05em 0
+      rgba(0, 255, 0, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75), 0 -0.05em 0
+      rgba(0, 255, 0, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 255, 0.75), -0.025em -0.025em 0 rgba(0, 255, 255, 0.75), -0.025em -0.05em 0
+      rgba(0, 255, 0, 0.75);
+  }
+}
+
+/* Navbar industrial */
+.industrial-navbar {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.industrial-navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 43, 226, 0.8),
+    rgba(138, 43, 226, 0.2),
+    rgba(138, 43, 226, 0.8),
+    transparent
+  );
+}
+
+/* Gradiente radial para el menú móvil */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Estilos para el fondo de estrellas */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Estilo para nebulosas */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.2;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Estilo para estrellas fugaces */
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(138, 43, 226, 0), rgba(138, 43, 226, 1), rgba(255, 255, 255, 1));
+  transform-origin: left;
+  animation: shooting 3s linear forwards;
+  opacity: 0;
+}
+
+@keyframes shooting {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(45deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(500px) translateY(500px) rotate(45deg);
+  }
+}
+
+/* Animación de escaneo para barras de habilidades */
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}
+
