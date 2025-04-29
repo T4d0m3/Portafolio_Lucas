@@ -329,27 +329,30 @@ export default function Home() {
                       <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
                     </Canvas>
 
-                    {/* Etiqueta de modelo con estilo industrial */}
+                    /* Etiqueta de modelo con estilo industrial */}
                     <div className="absolute bottom-0 left-0 right-0 bg-black/70 border-t border-primary/30 py-1 px-3">
                       <p className="text-xs font-mono text-primary">SERVER_MODEL // INTERACTIVE</p>
                     </div>
-                  </div>
-                </div>
+                    </div>
+                    </div>
 
-                {/* Botones de acción con estilo industrial */}
-                <div className="grid grid-cols-2 gap-3">
-                  <Button className="bg-black border border-primary hover:bg-primary/20 text-primary neon-box transition-all duration-300">
-                    <Download className="mr-2 h-4 w-4" />
-                    <span className="relative z-10 font-mono text-xs">DOWNLOAD_CV</span>
-                  </Button>
-                  <Button className="bg-primary hover:bg-primary/80 text-white neon-box transition-all duration-300">
-                    <Briefcase className="mr-2 h-4 w-4" />
-                    <span className="relative z-10 font-mono text-xs">HIRE_ME</span>
-                  </Button>
-                </div>
-              </motion.div>
+                    {/* Botones de acción con estilo industrial */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button
+                        className="bg-black border border-primary hover:bg-primary/20 text-primary neon-box transition-all duration-300"
+                        onClick={() => window.open("/CV_IT_Lucas_pampillon.pdf", "_blank")}
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        <span className="relative z-10 font-mono text-xs">DOWNLOAD_CV</span>
+                      </Button>
+                      <Button className="bg-primary hover:bg-primary/80 text-white neon-box transition-all duration-300">
+                        <Briefcase className="mr-2 h-4 w-4" />
+                        <span className="relative z-10 font-mono text-xs">HIRE_ME</span>
+                      </Button>
+                    </div>
+                    </motion.div>
 
-              {/* Columna central: About Me y Career */}
+                    {/* Columna central: About Me y Career */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
