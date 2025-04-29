@@ -340,7 +340,7 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-3">
                       <Button
                         className="bg-black border border-primary hover:bg-primary/20 text-primary neon-box transition-all duration-300"
-                        onClick={() => window.open("/CV_IT_Lucas_pampillon.pdf", "_blank")}
+                        onClick={() => window.open("/CV_IT_Lucas_Pampillon.pdf", "_blank")}
                       >
                         <Download className="mr-2 h-4 w-4" />
                         <span className="relative z-10 font-mono text-xs">DOWNLOAD_CV</span>
