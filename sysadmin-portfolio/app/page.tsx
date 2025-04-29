@@ -85,15 +85,15 @@ export default function Home() {
     { name: "Linux Administration", percentage: 95, icon: <Terminal className="h-5 w-5" /> },
     { name: "Windows Server", percentage: 90, icon: <Server className="h-5 w-5" /> },
     { name: "Network Security", percentage: 85, icon: <Shield className="h-5 w-5" /> },
+    { name: "Secure Networking", percentage: 85, icon: <Shield className="h-5 w-5" /> },
     { name: "AWS Cloud", percentage: 88, icon: <Cloud className="h-5 w-5" /> },
-    { name: "Azure", percentage: 80, icon: <Cloud className="h-5 w-5" /> },
-    { name: "Docker & Kubernetes", percentage: 85, icon: <Database className="h-5 w-5" /> },
-    { name: "CI/CD Pipelines", percentage: 82, icon: <Cpu className="h-5 w-5" /> },
-    { name: "Terraform & IaC", percentage: 78, icon: <Code className="h-5 w-5" /> },
+    { name: "Docker & Docker Swarm", percentage: 85, icon: <Database className="h-5 w-5" /> },
     { name: "Monitoring Systems", percentage: 92, icon: <Zap className="h-5 w-5" /> },
     { name: "Database Management", percentage: 87, icon: <Database className="h-5 w-5" /> },
     { name: "Shell Scripting", percentage: 90, icon: <Terminal className="h-5 w-5" /> },
     { name: "Python", percentage: 75, icon: <Code className="h-5 w-5" /> },
+    { name: "Threat Analysis", percentage: 75, icon: <Code className="h-5 w-5" /> },
+    { name: "Penetration Testing ", percentage: 75, icon: <Code className="h-5 w-5" /> },
   ]
 
   // Soft Skills
@@ -375,7 +375,7 @@ export default function Home() {
                       <div>
                         <p className="text-gray-300 mb-4">
                           I'm a <span className="text-primary font-semibold">Senior System Administrator</span> and{" "}
-                          <span className="text-primary font-semibold">DevOps Engineer</span> with over 8 years of
+                          <span className="text-primary font-semibold">Cybersecurity Analsyt</span> with over 8 years of
                           experience designing, implementing, and maintaining robust IT infrastructure for enterprise
                           environments.
                         </p>
